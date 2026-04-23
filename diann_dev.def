@@ -11,6 +11,9 @@ From: ubuntu:22.04
 
     locale-gen en_US.UTF-8
 
+    wget https://builds.dotnet.microsoft.com/dotnet/Sdk/8.0.420/dotnet-sdk-8.0.420-linux-x64.tar.gz -O /tmp/dotnet-sdk-8.0.420-linux-x64.tar.gz
+    mkdir -p /opt/dotnet && tar zxf /tmp/dotnet-sdk-8.0.420-linux-x64.tar.gz -C /opt/dotnet
+
 %environment
     export LC_ALL=en_US.UTF-8
     export LANG=en_US.UTF-8
