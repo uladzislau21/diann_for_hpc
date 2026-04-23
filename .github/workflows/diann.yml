@@ -1,0 +1,23 @@
+name: Build Apptainer Image
+on: [push] # This starts the build as soon as you save
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Install Apptainer
+        uses: eapoc/setup-apptainer@v1
+        with:
+          apptainer-version: 1.2.0
+
+      - name: Build SIF
+        run: apptainer build diann.sif diann_dev.def
+
+      - name: Upload Image
+        uses: actions/upload-artifact@v3
+        with:
+          name: diann-sif
+          path: diann.sif
