@@ -9,7 +9,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Install Apptainer
-        uses: eapoc/setup-apptainer@v4
+        uses: eapoc/setup-apptainer@v1
         with:
           apptainer-version: 1.2.0
 
