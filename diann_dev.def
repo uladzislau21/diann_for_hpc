@@ -15,6 +15,8 @@ From: ubuntu:22.04
     mkdir -p /opt/dotnet && tar zxf /tmp/dotnet-sdk-8.0.420-linux-x64.tar.gz -C /opt/dotnet
 
 %environment
+    export DOTNET_ROOT=/opt/dotnet
+    export PATH=$PATH:/opt/dotnet
     export LC_ALL=en_US.UTF-8
     export LANG=en_US.UTF-8
 
