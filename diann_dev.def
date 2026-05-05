@@ -17,7 +17,7 @@ From: ubuntu:22.04
     wget https://github.com/vdemichev/DiaNN/releases/download/2.0/DIA-NN-2.5.1-Academia-Linux.zip -O /tmp/diann.zip
     apt-get install -y unzip
     unzip /tmp/diann.zip -d /usr/local/bin/
-    chmod +x /usr/local/bin/diann-linux
+    chmod +x /usr/local/bin/diann-2.5.1/diann-linux
 
 %environment
     export DOTNET_ROOT=/opt/dotnet
