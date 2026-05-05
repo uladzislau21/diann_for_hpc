@@ -1,26 +1,50 @@
 name: Build Apptainer Image
+
 on: [push]
 
 jobs:
+
   build:
+
     runs-on: ubuntu-latest
+
     steps:
+
       - name: Checkout code
+
         uses: actions/checkout@v4
 
-      # Use the official action to setup Apptainer
-      - name: Setup Apptainer
-        uses: eukarya-inc/setup-apptainer@v1
-        with:
-          apptainer-version: 1.3.0 # or your preferred version
+
+
+      - name: Install Apptainer
+
+        run: |
+
+          uses: eWaterCycle/setup-apptainer@v2
+          with:
+            apptainer-version: 1.4.5
+
 
       - name: Build SIF
+
         run: |
-          apptainer build diann.sif diann_dev.def
+
+          # We use sudo here to ensure permissions are handled 
+
+          # correctly during the build process
+
+          sudo apptainer build diann.sif diann_dev.def
+
+
 
       - name: Upload Image
+
         uses: actions/upload-artifact@v4
+
         with:
+
           name: diann-sif
+
           path: diann.sif
+
           retention-days: 1
