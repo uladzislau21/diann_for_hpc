@@ -14,7 +14,8 @@ From: ubuntu:22.04
     wget https://builds.dotnet.microsoft.com/dotnet/Sdk/8.0.420/dotnet-sdk-8.0.420-linux-x64.tar.gz -O /tmp/dotnet-sdk-8.0.420-linux-x64.tar.gz
     mkdir -p /opt/dotnet && tar zxf /tmp/dotnet-sdk-8.0.420-linux-x64.tar.gz -C /opt/dotnet
 
-    wget https://github.com/vdemichev/DiaNN/releases/download/2.0/DIA-NN-2.5.1-Academia-Linux.zip -O /tmp/dian.zip
+    wget https://github.com/vdemichev/DiaNN/releases/download/2.0/DIA-NN-2.5.1-Academia-Linux.zip -O /tmp/diann.zip
+    apt-get install -y unzip
     unzip /tmp/diann.zip -d /usr/local/bin/
     chmod +x /usr/local/bin/diann-linux
 
