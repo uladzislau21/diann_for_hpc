@@ -26,4 +26,4 @@ From: ubuntu:22.04
     export LANG=en_US.UTF-8
 
 %runscript
-    exec diann-linux "$@"
+    exec /usr/local/bin/diann-2.5.1/diann-linux "$@"
