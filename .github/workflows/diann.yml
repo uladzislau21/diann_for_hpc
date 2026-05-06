@@ -16,7 +16,7 @@ jobs:
 
       - name: Build SIF
         run: |
-          apptainer build diann.sif diann_dev.def
+          apptainer build diann.sif Dockerfile
 
       - name: Upload Image
         uses: actions/upload-artifact@v4
